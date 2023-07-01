@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    color-scheme: light dark;
+}
+body {
+    background: rgb(0, 0, 80);
+}
+h1 {
+    font-size: 60px;
+    font-weight: 700;
+    text-align: center;
+}
+header {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(35, 35, 35, 1);
+    border-bottom: 3px solid white;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    min-height: 100px;
+    padding: 0 30px;
+}
+.cont-1, .cont-2, .cont-3, .cont-4, .cont-5, .cont-6 {
+    padding: 0 10px;
+}
+.cont-1 {
+    width: 200px;
+}
+.cont-4 {
+    min-width: max-content;
+}
+.cont-6 {
+    display: none;
+}
+.cont-6 img {
+    width: 30px;
+}
+.ec-logo {
+    max-width: clamp(145px,100%,100%);
+    vertical-align: middle;
+}
+.nav-bar ul {
+    display: flex;
+    gap: 30px;
+}
+.nav-bar ul li, .link {
+    padding: 8px;
+    width: 120px;
+    position: relative;
+}
+.active {
+    padding: 8px;
+    width: 120px;
+    outline: 2px solid white;
+    border-radius: 6px;
+    background: aqua;
+    color: black;
+}
+.active a {
+    color: black;
+}
+.nav-bar a {
+    color: rgb(190, 190, 190);
+}
+.sub-home, .sub-product, .sub-support {
+    display: none;
+}
+.sub-home ul li a:hover, .sub-product ul li a:hover, .sub-support ul li a:hover, .nav-bar ul li a:hover, .link:hover {
+    color: aqua;
+}
+.nav-bar ul li:hover .sub-home, .nav-bar ul li:hover .sub-product, .nav-bar ul li:hover .sub-support {
+    display: block;
+}
+.sub-home ul, .sub-product ul, .sub-support ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 10px;
+    left: 0;
+    top: 34.4px;
+    border-radius: 6px;
+    outline: 2px solid white;
+    box-shadow: 0 0 10px white;
+    background-color: rgba(35, 35, 35, 1);
+}
+.sub-home ul li, .sub-product ul li, .sub-support ul li {
+    width: 150px;
+}
+.socials {
+    display: flex;
+    gap: 10px;
+}
+.socials img {
+    vertical-align: middle;
+    max-width: 30px;
+    aspect-ratio: 1/1;
+}
+.lang {
+    display: flex;
+    gap: 6px;
+}
+.active-lang {
+    color: aqua;
+}
+.not-lang {
+    color: white;
+}
+.not-lang:hover {
+    color: aqua;
+}
+header button {
+    color: white;
+    padding: 10px 25px;
+    font-size: 12px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    transition: 0.5s;
+}
+header button:hover {
+    transform: translateY(-5px);
+    background: aqua;
+    color: black;
+}
+main {
+    justify-content: center;
+}
+main, section {
+    padding: 30px 10%;
+    display: flex;
+    max-width: 100%;
+    gap: 50px;
+}
+section {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+hr {
+    border: none;
+    border-top: 3px solid white;
+    margin: 30px auto 0;
+    width: 80%;
+}
+.left-main, .right-main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+.left-main img {
+    max-width: clamp(200px,45dvw,400px);
+}
+.app-install {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.app-install .qr-code {
+    max-width: 100px;
+}
+.store-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+.store-logo img {
+    vertical-align: middle;
+    max-width: 120px;
+}
+.store-logo div {
+    font-weight: 600;
+    text-align: center;
+}
+.right-main .title {
+    font-size: 60px;
+    font-weight: 600;
+    text-wrap: balance;
+}
+.right-main .subtitle {
+    font-size: 24px;
+    font-weight: 600;
+}
+.intro {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+}
+.intro div {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.intro .bold-text {
+    font-weight: 700;
+}
+.stats {
+    display: flex;
+    justify-content: space-around;
+}
+.stats div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.stats p {
+    font-size: 12px;
+    text-align: center;
+}
+.stats img {
+    width: 80px;
+}
+#demo .subtitle, #rental-procedure .subtitle, #return-procedure .subtitle, #ec-app .subtitle, #app-features .subtitle, #network .subtitle {
+    text-align: center;
+    font-size: 16px;
+}
+#demo .video {
+    display: flex;
+}
+#demo .video iframe {
+    max-width: clamp(250px,80dvw,100%);
+    aspect-ratio: 1.6/1;
+}
+.rental, .return, .apps, .features {
+    display: flex;
+    text-align: center;
+    gap: 10px;
+}
+.rental .rental-title, .return .return-title, .apps .apps-title, .features .feature-title {
+    font-size: clamp(18px,2.84dvw,24px);
+    font-weight: 700;
+}
+.rental .rental-subtitle, .return .return-subtitle, .apps .apps-subtitle, .features .feature-subtitle {
+    font-size: clamp(12px,1.87dvw,16px);
+}
+.rental .scan, .rental .deposit, .rental .rent, .return .locate, .return .return-2, .return .pay, .return .refund,
+.apps .ec, .apps .wechat, .apps .alipay, .features .feature-1, .features .feature-2, .features .feature-3, .features .feature-4 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.rental img, .return img, .apps img, .features img {
+    aspect-ratio: 1/1;
+    object-fit:contain;
+    margin: 0 auto 10px;
+}
+.rental img, .apps img {
+    max-width: clamp(200px,24dvw,250px);
+}
+.return img, .features img {
+    max-width: clamp(150px,19dvw,250px);
+}
+.payment {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-auto-rows: minmax(0, auto);
+    margin: auto;
+}
+.payment img {
+    width: 150px;
+    aspect-ratio: 1.5/1;
+    object-fit: contain;
+}
+.map {
+    display: flex;
+    justify-content: center;
+    max-width: clamp(250px,80dvw,100%);
+    aspect-ratio: 1.33/1;
+}
+#network .download-app {
+    padding: 1em;
+    border-radius: 15px;
+    max-width: clamp(150px,44dvw,250px);
+    font-size: clamp(12px,2.15dvw,14px);
+    font-weight: bold;
+    background: transparent;
+    color: white;
+    border: 3px solid white;
+    transition: 0.5s;
+}
+#network .download-app:hover {
+    background: aqua;
+    color: black;
+    transform: translateY(-5px);
+}
+@media (max-width:1307px) {
+    .features {
+        display: flex;
+        flex-direction: column;
+    }
+    .features img {
+        max-width: clamp(200px,61.64dvw,450px);
+        aspect-ratio: 1/1;
+        object-fit:contain;
+        margin: 0 auto;
+    }
+    .features .feature-1, .features .feature-2, .features .feature-3, .features .feature-4 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width:1250px) {
+    .payment {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 20px;
+    }
+    .payment img {
+        width: clamp(150px,25dvw,300px);
+    }
+}
+@media (max-width:800px) {
+    .payment {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 20px;
+    }
+    .payment img {
+        width: clamp(150px,38dvw,300px);
+    }
+}
+@media (max-width:500px) {
+    .payment {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        row-gap: 20px;
+    }
+    .payment img {
+        width: clamp(150px,60dvw,300px);
+    }
+}
+@media (max-width:1176px) {
+    .right-main .title {
+        font-size: 54px;
+    }
+    .right-main .subtitle {
+        font-size: 20px;
+    }
+}
+@media (max-width:1156px) {
+    .cont-6 {
+        display: block;
+    }
+    .cont-2, .cont-3, .cont-4, .cont-5 {
+        display: none;
+    }
+}
+@media (max-width:1121px) {
+    .intro {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width:1116px) {
+    .right-main .title {
+        font-size: 48px;
+    }
+    .right-main .subtitle {
+        font-size: 18px;
+    }
+}
+@media (max-width:1054px) {
+    main {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .left-main, .right-main {
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+    }
+    .left-main img {
+        max-width: clamp(200px,70dvw,400px);
+    }
+    .download-store {
+        display: flex;
+    }
+    .download-store img {
+        max-width: 120px;
+    }
+    .stats {
+        gap: 20px;
+    }
+    .app-install .qr-code {
+        max-width: clamp(50px,22dvw,100px);
+    }
+    .store-logo img {
+        max-width: clamp(60px,26dvw,120px);
+    }
+    .store-logo div {
+        font-size: clamp(12px,4dvw,16px);
+    }
+    .stats img {
+        max-width: clamp(30px,20dvw,80px);
+    }
+    .right-main .title {
+        font-size: clamp(31px,9.68dvw,48px);
+    }
+    .right-main .subtitle {
+        font-size: clamp(16px,3.63dvw,18px);
+    }
+}
+@media (max-width:802px) {
+    #demo h1, #rental-procedure h1, #return-procedure h1, #ec-app h1, #app-features h1, #network h1 {
+        font-size: clamp(32px,7.46dvw,60px);
+    }
+    #demo .subtitle, #rental-procedure .subtitle, .rental .rental-subtitle, #return-procedure .subtitle, 
+    .return .return-subtitle, #ec-app .subtitle, .apps .apps-subtitle, #app-features .subtitle, .features .feature-subtitle, 
+    #network .subtitle {
+        font-size: clamp(12px,2dvw,16px);
+    }
+}
+@media (max-width:787px) {
+    .return {
+        display: flex;
+        flex-direction: column;
+    }
+    .return img {
+        max-width: clamp(200px,61.64dvw,450px);
+        aspect-ratio: 1/1;
+        object-fit:contain;
+        margin: 0 auto;
+    }
+    .return .locate, .return .return-2, .return .pay, .return .refund {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (max-width:774px) {
+    .rental, .apps {
+        display: flex;
+        flex-direction: column;
+    }
+    .rental img, .apps img {
+        max-width: clamp(200px,61.64dvw,450px);
+        aspect-ratio: 1/1;
+        object-fit:contain;
+        margin: 0 auto;
+    }
+    .rental .scan, .rental .deposit, .rental .rent, .apps .ec, .apps .wechat, .apps .alipay {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@media (min-width:774px) and (max-width:1181px) {
+    .apps .apps-title {
+        display: flex;
+        min-height: 74px;
+        align-items: center;
+        margin: auto;
+    }
+    .apps .apps-subtitle {
+        display: flex;
+        min-height: 72px;
+        align-items: top;
+        margin: auto;
+    }
+}
+@media (min-width:1307px) and (max-width:1624px) {
+    .features .feature-title {
+        display: flex;
+        min-height: 74px;
+        align-items: center;
+        margin: auto;
+    }
+}
+@media (min-width:1307px) and (max-width:2030px) {
+    .features .feature-subtitle {
+        display: flex;
+        min-height: 72px;
+        align-items: top;
+        margin: auto;
+    }
+}
