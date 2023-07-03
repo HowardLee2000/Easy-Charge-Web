@@ -8,6 +8,20 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+body::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+body::-webkit-scrollbar-track {
+    background: rgb(73, 73, 73);
+}
+body::-webkit-scrollbar-thumb {
+    background: aqua;
+    border-radius: 6px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
 html {
     color-scheme: light dark;
 }
@@ -63,7 +77,7 @@ header {
     width: 120px;
     position: relative;
 }
-.active {
+.active-bar {
     padding: 8px;
     width: 120px;
     outline: 2px solid white;
@@ -71,10 +85,13 @@ header {
     background: aqua;
     color: black;
 }
-.active a {
+.active {
     color: black;
 }
-.nav-bar a {
+.sub-home a, .sub-product a, .sub-support a {
+    color: white;
+}
+.link {
     color: rgb(190, 190, 190);
 }
 .sub-home, .sub-product, .sub-support {
@@ -109,6 +126,10 @@ header {
     vertical-align: middle;
     max-width: 30px;
     aspect-ratio: 1/1;
+    transition: 0.5s;
+}
+.socials img:hover {
+    transform: translateY(-5px);
 }
 .lang {
     display: flex;
@@ -144,13 +165,13 @@ header button:hover {
 main {
     justify-content: center;
 }
-main, section {
+main, section, footer {
     padding: 30px 10%;
     display: flex;
     max-width: 100%;
     gap: 50px;
 }
-section {
+section, footer {
     flex-direction: column;
     gap: 30px;
     align-items: center;
@@ -160,6 +181,81 @@ hr {
     border-top: 3px solid white;
     margin: 30px auto 0;
     width: 80%;
+}
+footer {
+    background-color: rgba(35, 35, 35, 1);
+    border-top: 3px solid white;
+}
+footer .top-foot {
+    max-width: 100%;
+    display: flex;
+    gap: 50px;
+}
+footer .top-foot ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .top-foot .page-link, footer .top-foot .not-link, footer .top-foot .title {
+    font-size: 14px;
+}
+footer .top-foot .title {
+    font-weight: 700;
+}
+footer .top-foot .page-link, footer .top-foot .not-link {
+    color: rgb(190, 190, 190);
+}
+footer .top-foot .page-link:hover {
+    color: aqua;
+}
+footer .bottom-foot {
+    gap: 10px;
+}
+footer .bottom-foot, footer .bottom-foot .social {
+    display: flex;
+    align-items: center;
+}
+footer .bottom-foot .ec-logo {
+    width: 300px;
+    margin-right: 90px;
+}
+footer .bottom-foot .social {
+    gap: 5px;
+}
+footer .bottom-foot .social img {
+    width: 40px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    vertical-align: middle;
+    transition: 0.5s;
+}
+footer .bottom-foot .social img:hover {
+    transform: translateY(-5px);
+}
+footer .bottom-foot .qr-code {
+    width: 70px;
+    vertical-align: middle;
+}
+footer .foot-app {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+footer .foot-app .download-app {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+footer .foot-app .foot-store {
+    display: flex;
+    gap: 5px;
+}
+footer .foot-app .foot-store img {
+    width: 120px;
+    vertical-align: middle;
+}
+footer .copyright {
+    font-size: 12px;
 }
 .left-main, .right-main {
     display: flex;
@@ -380,6 +476,15 @@ hr {
         font-size: 18px;
     }
 }
+@media (max-width: 1078px) {
+    footer .top-foot .page-link, footer .top-foot .title {
+        font-size: 12px;
+    }
+    footer .bottom-foot .ec-logo {
+        width: 250px;
+        margin-right: 40px;
+    }
+}
 @media (max-width:1054px) {
     main {
         display: flex;
@@ -423,8 +528,13 @@ hr {
         font-size: clamp(16px,3.63dvw,18px);
     }
 }
+@media (max-width:960px) {
+    footer {
+        display: none;
+    }
+}
 @media (max-width:802px) {
-    #demo h1, #rental-procedure h1, #return-procedure h1, #ec-app h1, #app-features h1, #network h1 {
+    #demo h1, #rental-procedure h1, #return-procedure h1, #ec-app h1, #app-features h1, #network h1, #payment h1 {
         font-size: clamp(32px,7.46dvw,60px);
     }
     #demo .subtitle, #rental-procedure .subtitle, .rental .rental-subtitle, #return-procedure .subtitle, 
@@ -495,5 +605,10 @@ hr {
         min-height: 72px;
         align-items: top;
         margin: auto;
+    }
+}
+@media (max-aspect-ratio:4/4) {
+    .map {
+        aspect-ratio: 1/1.33;
     }
 }
