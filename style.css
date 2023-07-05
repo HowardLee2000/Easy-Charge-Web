@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* index */
+
 *{
     margin: 0;
     padding: 0;
@@ -326,7 +328,8 @@ footer .copyright {
 .stats img {
     width: 80px;
 }
-#demo .subtitle, #rental-procedure .subtitle, #return-procedure .subtitle, #ec-app .subtitle, #app-features .subtitle, #network .subtitle {
+#demo .subtitle, #rental-procedure .subtitle, #return-procedure .subtitle, #ec-app .subtitle, #app-features .subtitle, #network .subtitle,
+#monthly-pass .subtitle, #coupon-mart .subtitle {
     text-align: center;
     font-size: 16px;
 }
@@ -611,4 +614,200 @@ footer .copyright {
     .map {
         aspect-ratio: 1/1.33;
     }
+}
+
+/* products and services */
+#original-station h1 {
+    font-size: clamp(48px,4.8dvw,60px);
+}
+#powerbank .specs {
+    width: 310px;
+    align-items: center;
+}
+#powerbank img {
+    margin: auto 0;
+}
+#powerbank .container {
+    margin: 0 auto;
+}
+#powerbank .top-specs, #powerbank .bottom-specs {
+    display: flex;
+    gap: 20px;
+}
+#powerbank .top-specs .specs, #powerbank .bottom-specs .specs {
+    display: flex;
+    flex-direction: column;
+}
+#powerbank .top-specs .title, #powerbank .bottom-specs .title {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    min-height: 55px;
+    justify-content: center;
+    align-items: center;
+}
+#powerbank .top-specs ul, #powerbank .bottom-specs ul {
+    font-size: 14px;
+    height: 125px;
+}
+#powerbank .top-specs ul li, #powerbank .bottom-specs ul li, .charging-station .specs ul li {
+    list-style: square;
+    margin-left: 1.5em;
+}
+.charging-station {
+    display: flex;
+    gap: 10px;
+}
+#original-station .charging-station img, #derived-station .charging-station img {
+    display: flex;
+    margin: 0 auto;
+    max-width: clamp(150px,20dvw,300px);
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+#derived-station .charging-station img {
+    max-width: clamp(200px,20dvw,250px);
+    aspect-ratio: 1/1.5;
+}
+.charging-station .specs ul li {
+    font-size: clamp(12px,1dvw,16px);
+}
+.charging-station .title {
+    font-size: clamp(16px,1.6dvw,24px);
+    font-weight: 700;
+    text-align: center;
+}
+.charging-station .slot {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+#monthly-pass .tnc {
+    font-size: 12px;
+    color: white;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 0.35rem;
+}
+#monthly-pass .big-font {
+    font-size: clamp(24px,4.6dvw,36px);
+    font-weight: bold;
+}
+#monthly-pass .perks {
+    display: flex;
+    gap: 50px;
+    margin: 0 auto;
+}
+#monthly-pass .perks .pass {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+#monthly-pass .perks .title {
+    width: clamp(250px,19.4dvw,280px);
+    font-size: clamp(12px,0.9dvw,16px);
+    font-weight: 700;
+    margin: auto;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 0.625em;
+    background: aqua;
+    color: black;
+    margin-bottom: 20px;
+}
+#monthly-pass .perks img {
+    max-width: clamp(300px,24dvw,350px);
+    border: 3px solid white;
+    border-radius: 30px;
+    aspect-ratio: 1.57/1;
+    object-fit: contain;
+}
+#monthly-pass .perks .price {
+    font-size: 16px;
+}
+#monthly-pass .perks .pass button {
+    font-size: clamp(12px,0.96dvw,14px);
+    font-weight: 600;
+    margin: auto;
+    padding: 0.36em;
+    width: 120px;
+    border: 3px solid white;
+    border-radius: 10px;
+    background: aquamarine;
+    color: black;
+    transition: 0.5s;
+}
+@media (max-width:1215px) {
+    #powerbank .specs .title {
+        font-size: clamp(1px,1.48dvw,18px);
+    }
+}
+@media (max-width:774px) {
+    #original-station h1, #derived-station h1, #monthly-pass h1, #coupon-mart h1, #powerbank h1 {
+        font-size: clamp(32px,7dvw,60px);
+    }
+    #monthly-pass .subtitle, #coupon-mart .subtitle {
+        font-size: clamp(12px,2dvw,16px);
+    }
+    .charging-station {
+        display: flex;
+        flex-direction: column;
+    }
+    #original-station .charging-station img {
+        max-width: clamp(200px,45dvw,300px);
+    }
+    #derived-station .charging-station img {
+        max-width: clamp(200px,32dvw,250px);
+    }
+    .charging-station .specs ul li {
+        font-size: clamp(12px,3dvw,16px);
+    }
+    .charging-station .title {
+        font-size: clamp(16px,4dvw,24px);
+    }
+}
+@media (max-width:1249px) {
+    #monthly-pass .perks {
+        display: flex;
+        flex-direction: column;
+    }
+    #monthly-pass .perks .title {
+        width: clamp(250px,24dvw,300px);
+        font-size: clamp(12px,1.28dvw,16px);
+    }
+    #monthly-pass .perks img {
+        max-width: clamp(250px,55dvw,350px);
+        margin: auto;
+    }
+    #monthly-pass .perks .price {
+        font-size: clamp(16px,1.67dvw,24px);
+    }
+    #monthly-pass .perks .pass button {
+        font-size: clamp(14px,1.67dvw,24px);
+        width: clamp(150px,16dvw,200px);
+    }
+}
+@media (max-width:450px) {
+    #monthly-pass .perks .price {
+        font-size: 14px;
+    }
+    #monthly-pass .perks .pass button {
+        font-size: 12px;
+        width: 150px;
+    }
+}
+
+/* support */
+.faq-hr {
+    border-style: dashed;
+    border-width: 2px;
+    width: 1100px;
+    margin: 0;
+}
+.qna {
+    width: 1000px;
 }
