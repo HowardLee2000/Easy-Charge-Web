@@ -10,8 +10,72 @@
     />
     <title>Easy Charge</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="products_script.js"></script>
   </head>
   <body>
+    <!-- dropdown menu for smaller screens -->
+    <nav id="dropdown">
+      <div class="icon">
+        <svg onclick="closeMenu()" id="close-icon" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+          width="30px" height="30px" viewBox="0 0 41.756 41.756"
+          xml:space="preserve">
+        <g>
+          <path d="M27.948,20.878L40.291,8.536c1.953-1.953,1.953-5.119,0-7.071c-1.951-1.952-5.119-1.952-7.07,0L20.878,13.809L8.535,1.465
+            c-1.951-1.952-5.119-1.952-7.07,0c-1.953,1.953-1.953,5.119,0,7.071l12.342,12.342L1.465,33.22c-1.953,1.953-1.953,5.119,0,7.071
+            C2.44,41.268,3.721,41.755,5,41.755c1.278,0,2.56-0.487,3.535-1.464l12.343-12.342l12.343,12.343
+            c0.976,0.977,2.256,1.464,3.535,1.464s2.56-0.487,3.535-1.464c1.953-1.953,1.953-5.119,0-7.071L27.948,20.878z"/>
+        </g>
+        </svg>
+      </div>
+      <ul>
+        <li>
+          <a href="index.html#easy-charge-intro" class="main-nav">Home</a>
+          <a href="index.html#easy-charge-intro" class="sub-nav">Easy Charge</a>
+          <a href="index.html#rental-procedure" class="sub-nav">Rental Procedure</a>
+          <a href="index.html#ec-app" class="sub-nav">Easy Charge App</a>
+          <a href="index.html#network" class="sub-nav">Business Services</a>
+          <hr class="dropdown-hr">
+        </li>
+        <li>
+          <a href="products.html" class="main-nav">Products</a>
+          <a href="products.html#powerbank" class="sub-nav">Power Bank</a>
+          <a href="products.html#charging-station" class="sub-nav">Charging Station</a>
+          <a href="products.html#monthly-pass" class="sub-nav">Monthly VIP Pass</a>
+          <a href="products.html#coupon-mart" class="sub-nav">Coupon Mart</a>
+          <hr class="dropdown-hr">
+        </li>
+        <li>
+          <a href="#" class="main-nav">Latest News</a>
+          <hr class="dropdown-hr">
+        </li>
+        <li>
+          <a href="support.html" class="main-nav">Support</a>
+          <a href="support.html#FAQ" class="sub-nav">FAQ</a>
+          <a href="support.html#support" class="sub-nav">Collaboration</a>
+          <a href="support.html#contact-us" class="sub-nav">Contact Us</a>
+          <hr class="dropdown-hr">
+        </li>
+        <div class="socials">
+          <a href="https://www.facebook.com/hkeasycharge" target="_blank"
+          ><img src="Template/fb.png" alt="facebook button"
+          /></a>
+          <a
+            href="https://www.instagram.com/easychargehk/?igshid=15b4ti6djpac3"
+            target="_blank"
+            ><img src="Template/ig.png" alt="instagram button"
+          /></a>
+          <a
+            href="https://mp.weixin.qq.com/s?__biz=MzAwMzU3MDgyNQ==&mid=2247483669&idx=1&sn=7129a5a74029e4813b4c656bc97fac60&chksm=9b386cf3ac4fe5e590f3d22612a6f398c584ab16b48dc3f52558ee580d5460c9fee43a9cfe07&scene=0&xt"
+            target="_blank"
+            ><img src="Template/tw.png" alt="wechat button"
+          /></a>
+        </div>
+        <div class="lang">
+          <a href="index.html" class="active-lang">Eng</a>
+          <a href="index_chi.html" class="not-lang">繁中</a>
+        </div>
+      </ul>
+    </nav>
     <!-- HEADER -->
     <header>
       <div class="cont-1">
@@ -108,8 +172,8 @@
           ><button type="button" class="button-1">Download</button></a
         >
       </div>
-      <div class="cont-6">
-        <img src="Template/menu.png" />
+      <div id="menu-button" class="cont-6" onclick="displayMenu()">
+        <img id="menu" src="Template/menu.png" />
       </div>
     </header>
     <!-- Section 1: FAQ -->

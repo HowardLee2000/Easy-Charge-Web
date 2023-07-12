@@ -459,10 +459,7 @@ footer .copyright {
     margin-left: 40dvw;
     padding: 100px 2em 0;
     background: rgb(125, 125, 125);
-    overflow: hidden;
-    overflow-y: scroll;
     height: 100dvh;
-
 }
 #dropdown .icon {
     cursor: pointer;
