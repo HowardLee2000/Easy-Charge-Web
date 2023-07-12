@@ -460,6 +460,7 @@ footer .copyright {
     padding: 100px 2em 0;
     background: rgb(125, 125, 125);
     height: 100dvh;
+    display: none;
 }
 #dropdown .icon {
     cursor: pointer;
