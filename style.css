@@ -63,6 +63,7 @@ header {
     display: none;
 }
 .cont-6 img {
+    display: block;
     width: 30px;
 }
 .ec-logo {
@@ -98,7 +99,7 @@ header {
 .sub-home, .sub-product, .sub-support {
     display: none;
 }
-.sub-home ul li a:hover, .sub-product ul li a:hover, .sub-support ul li a:hover, .nav-bar ul li a:hover, .link:hover {
+.sub-home ul li a:hover, .sub-product ul li a:hover, .sub-support ul li a:hover, .link:hover {
     color: aqua;
 }
 .nav-bar ul li:hover .sub-home, .nav-bar ul li:hover .sub-product, .nav-bar ul li:hover .sub-support {
@@ -404,6 +405,72 @@ footer .copyright {
     color: black;
     transform: translateY(-5px);
 }
+#dropdown, #dropdown ul, #dropdown ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#dropdown .icon {
+    vertical-align: middle;
+    position: absolute;
+    top: 35px;
+    right: 2em;
+}
+#dropdown ul li {
+    gap: 5px;
+}
+#dropdown ul li .main-nav {
+    font-size: 16px;
+    font-weight: 800;
+    color: rgb(0, 0, 80);
+}
+#dropdown ul li .sub-nav {
+    margin-left: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+#dropdown .socials {
+    justify-content: center;
+}
+#dropdown .socials img {
+    display: flex;
+    justify-content: space-between;
+    max-width: 30px;
+}
+#dropdown .lang {
+    gap: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    justify-content: center;
+}
+#dropdown hr {
+    max-width: 90%;
+    margin: 15px auto 0;
+    border: 2px solid white;
+    display: none;
+}
+#dropdown {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    margin-left: 40dvw;
+    padding: 100px 2em 0;
+    background: rgb(125, 125, 125);
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 100dvh;
+
+}
+#dropdown .icon {
+    cursor: pointer;
+}
+#close-icon {
+    fill: red;
+    vertical-align: middle;
+}
 @media (max-width:1307px) {
     .features {
         display: flex;
@@ -459,6 +526,7 @@ footer .copyright {
 @media (max-width:1156px) {
     .cont-6 {
         display: block;
+        cursor: pointer;
     }
     .cont-2, .cont-3, .cont-4, .cont-5 {
         display: none;

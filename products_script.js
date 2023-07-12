@@ -31,3 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+function displayMenu() {
+  const button = document.getElementById("menu-button");
+  const menuDrop = document.getElementById("dropdown");
+
+  button.addEventListener('click', () => {
+    menuDrop.style.display = "block";
+  });
+};
+
+function closeMenu() {
+  const button = document.getElementById("close-icon");
+  const menuDrop = document.getElementById("dropdown");
+
+  button.addEventListener('click', () => {
+    menuDrop.style.display = "none";
+  });
+};
