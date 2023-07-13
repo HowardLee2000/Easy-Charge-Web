@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+// display and close menu for smaller devices
 function displayMenu() {
   const button = document.getElementById("menu-button");
   const menuDrop = document.getElementById("dropdown");
@@ -48,4 +50,10 @@ function closeMenu() {
   button.addEventListener('click', () => {
     menuDrop.style.display = "none";
   });
+};
+
+// make sure function is called upon clicked
+window.onload = function() {
+  displayMenu();
+  closeMenu();
 };
