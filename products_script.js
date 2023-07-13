@@ -52,8 +52,20 @@ function closeMenu() {
   });
 };
 
+function closeMenu2() {
+  const menuDrop = document.getElementById("dropdown");
+  const autoClose = document.querySelectorAll(".sub-nav, .main-nav");
+
+  autoClose.forEach(function(button) {
+    button.addEventListener('click',function(event) {
+        menuDrop.style.display = "none";
+      });
+    });
+  };
+
 // make sure function is called upon clicked
 window.onload = function() {
   displayMenu();
   closeMenu();
+  closeMenu2();
 };
