@@ -685,12 +685,13 @@ footer .copyright {
 #original-station h1 {
     font-size: clamp(48px,4.8dvw,60px);
 }
-#powerbank .specs {
+.big-screen-powerbank .specs {
     width: 310px;
     align-items: center;
 }
-#powerbank img {
+.big-screen-powerbank img {
     margin: auto 0;
+    width: 100%;
 }
 #powerbank .container {
     margin: 0 auto;
@@ -719,6 +720,13 @@ footer .copyright {
 #powerbank .top-specs ul li, #powerbank .bottom-specs ul li, .charging-station .specs ul li {
     list-style: square;
     margin-left: 1.5em;
+}
+.small-screen-powerbank {
+    display: none;
+}
+.powerbank-hr {
+    margin: 0 auto;
+    width: 60%;
 }
 .charging-station {
     display: flex;
@@ -858,15 +866,122 @@ footer .copyright {
     color: aqua;
 }
 @media (max-width:1215px) {
-    #powerbank .specs .title {
-        font-size: clamp(1px,1.48dvw,18px);
+    .big-screen-powerbank .specs .title {
+        font-size: 16px;
+    }
+    .big-screen-powerbank  .specs li {
+        font-size: 12px;
+    }
+    .big-screen-powerbank  .top-specs, .big-screen-powerbank  .bottom-specs {
+        gap: 0;
     }
 }
+@media (min-width:940px) and (max-width:1165px) {
+    #powerbank .specs {
+        width: clamp(250px,26dvw,310px);
+    }
+}
+@media (max-width:939px) {
+    .big-screen-powerbank {
+        display: none;
+    }
+    .small-screen-powerbank {
+        display: flex;
+    }
+    .small-screen-powerbank .top-container {
+        display: flex;
+        align-items: center;
+    }
+    .top-container .border {
+        border-top: 3px solid white;
+        border-right: 3px solid white;
+        border-bottom: 3px solid white;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    .top-container .specs {
+        padding: 1em 2em;
+        width: clamp(300px,43.2dvw,380px);
+    }
+    .top-container .title {
+        text-align: center;
+        font-weight: 700;
+        font-size: clamp(16px,2dvw,24px);
+    }
+    .top-container img {
+        width: clamp(250px,36.4dvw,320px);
+    }
+    .bottom-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .bottom-container .title {
+        font-size: clamp(16px,2dvw,24px);
+        font-weight: 700;
+    }
+    .bottom-container .specs ul li, .top-container .specs ul li {
+        font-size: clamp(12px,1.2dvw,16px);
+    }
+}
+@media (max-width:700px) {
+    .top-container img {
+        width: clamp(250px,70dvw,350px);
+    }
+    .small-screen-powerbank .top-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .top-container .border {
+        border: 3px solid white;
+        border-radius: 20px;
+    }
+    .top-container .specs {
+        width: clamp(250px,80dvw,400px);
+    }
+    .top-container .title {
+        font-size: clamp(14px,4.3dvw,24px);
+    }
+    .bottom-container .title {
+        font-size: clamp(16px,4.4dvw,24px);
+    }
+    .top-container .specs ul li {
+        font-size: clamp(10px,2.9dvw,16px);
+    }
+    .bottom-container .specs ul li {
+        font-size: clamp(12px,2.9dvw,16px)
+    }
+}
+/*
+@media (max-width:500px) {
+    .top-container .specs {
+        width: clamp();
+    }
+}
+*/
 @media (max-width:1000px) {
     #coupon-mart .button-container {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         grid-auto-rows: minmax(0, auto);
         row-gap: 10px;
+        column-gap: 50px;
+    }
+}
+@media (max-width:690px) {
+    #coupon-mart .button-container {
+        column-gap: 30px;
+    }
+}
+@media (max-width:615px) {
+    #coupon-mart .button-container {
+        column-gap: 15px;
+    }
+}
+@media (max-width:550px) {
+    #coupon-mart .button-container {
+        column-gap: 0px;
     }
 }
 @media (max-width:774px) {
@@ -1030,7 +1145,4 @@ input[type="number"]::-webkit-inner-spin-button {
     .qna p, #contact-us p {
         font-size: clamp(12px,2dvw,16px);
     }
-}
-#powerbank {
-    display: none;
 }
