@@ -17,9 +17,12 @@ function activateButton(buttonId) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    const defaultImage = document.getElementById("default-image");
     const buttons = document.querySelectorAll('#coupon-mart .button-container button');
     const collections = document.querySelectorAll('#coupon-mart .merchants .collection');
     
+    defaultImage.style.display = 'grid';
+
     buttons.forEach((button, index) => {
 
       button.addEventListener('click', () => {
