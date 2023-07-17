@@ -458,9 +458,12 @@ footer .copyright {
     z-index: 1;
     margin-left: 40dvw;
     padding: 100px 2em 0;
-    background: rgb(125, 125, 125);
+    background: rgb(125, 125, 125,0.85);
+    backdrop-filter: blur(7px);
     height: 100dvh;
     display: none;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 #dropdown .icon {
     cursor: pointer;
