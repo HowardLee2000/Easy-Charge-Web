@@ -342,22 +342,22 @@
         <h1>Business Collaboration</h1>
         <hr />
       </div>
-      <form class="form">
+      <form class="form" method="post" action="process-form.php">
         <div class="input-box">
           <label>Name</label>
-          <input type="text" placeholder="Name" required="required"/>
+          <input type="text" name="name" placeholder="Name" required="required"/>
         </div>
         <div class="input-box">
           <label>Contact Number</label>
-          <input type="number" placeholder="Contact Number" required="required"/>
+          <input type="number" name="contact" placeholder="Contact Number" required="required"/>
         </div>
         <div class="input-box">
           <label>E-Mail</label>
-          <input type="text" placeholder="E-Mail" required="required"/>
+          <input type="email" name="email" placeholder="E-Mail" required="required"/>
         </div>
         <div class="input-box">
           <label>Merchant Type</label>
-          <input type="text" inputmode="numeric" placeholder="Merchant Type" required="required"/>
+          <input type="text" name="merchant_type" inputmode="numeric" placeholder="Merchant Type" required="required"/>
         </div>
         <div class="input-box">
           <label>Description</label>
@@ -365,8 +365,8 @@
             <textarea id="description" name="description" placeholder="Please enter a description" rows="10" required></textarea>
           </div>
         </div>
+        <button type="submit" class="submit">SUBMIT</button>
       </form>
-      <button class="submit">SUBMIT</button>
     </section>
     <!-- Contact Us -->
     <section id="contact-us">
