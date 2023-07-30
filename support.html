@@ -343,26 +343,28 @@
         <hr />
       </div>
       <form class="form" action="http://localhost:3000/process-form.php" method="post">
-        <div class="input-box">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Name" required="required"/>
-        </div>
-        <div class="input-box">
-          <label for="contact">Contact Number</label>
-          <input type="number" id="contact" name="contact" placeholder="Contact Number" required="required"/>
-        </div>
-        <div class="input-box">
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" name="email" placeholder="E-Mail" required="required"/>
-        </div>
-        <div class="input-box">
-          <label for="merchant_type">Merchant Type</label>
-          <input type="text" id="merchant_type" name="merchant_type" inputmode="numeric" placeholder="Merchant Type" required="required"/>
-        </div>
-        <div class="input-box">
-          <label for="description">Description</label>
-          <div class="input-box-desc">
-            <textarea id="description" name="description" placeholder="Please enter a description" rows="10" required></textarea>
+        <div class="container">
+          <div class="input-box">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Name" required="required"/>
+          </div>
+          <div class="input-box">
+            <label for="contact">Contact Number</label>
+            <input type="number" id="contact" name="contact" placeholder="Contact Number" required="required"/>
+          </div>
+          <div class="input-box">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="E-Mail" required="required"/>
+          </div>
+          <div class="input-box">
+            <label for="merchant_type">Merchant Type</label>
+            <input type="text" id="merchant_type" name="merchant_type" inputmode="numeric" placeholder="Merchant Type" required="required"/>
+          </div>
+          <div class="input-box">
+            <label for="description">Description</label>
+            <div class="input-box-desc">
+              <textarea id="description" name="description" placeholder="Please enter a description" rows="10" required></textarea>
+            </div>
           </div>
         </div>
         <button type="submit" id="submit" name="submit" class="submit">SUBMIT</button>

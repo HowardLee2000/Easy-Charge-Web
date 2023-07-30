@@ -316,42 +316,70 @@
         <h1>工作合作</h1>
         <hr />
       </div>
-      <form class="form">
-        <div class="input-box">
-          <label>姓名</label>
-          <input type="text" placeholder="姓名" required="required" />
-        </div>
-        <div class="input-box">
-          <label>聯絡電話</label>
-          <input type="number" placeholder="聯絡電話" required="required" />
-        </div>
-        <div class="input-box">
-          <label>郵件</label>
-          <input type="text" placeholder="郵件" required="required" />
-        </div>
-        <div class="input-box">
-          <label>公司名稱</label>
-          <input
-            type="text"
-            inputmode="numeric"
-            placeholder="公司名稱"
-            required="required"
-          />
-        </div>
-        <div class="input-box">
-          <label>内容</label>
-          <div class="input-box-desc">
-            <textarea
-              id="description"
-              name="description"
-              placeholder="内容"
-              rows="10"
-              required
-            ></textarea>
+      <form
+        class="form"
+        action="http://localhost:3000/process-form.php"
+        method="post"
+      >
+        <div class="container">
+          <div class="input-box">
+            <label for="name">姓名</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="姓名"
+              required="required"
+            />
+          </div>
+          <div class="input-box">
+            <label for="contact">聯絡電話</label>
+            <input
+              type="number"
+              id="contact"
+              name="contact"
+              placeholder="聯絡電話"
+              required="required"
+            />
+          </div>
+          <div class="input-box">
+            <label for="email">郵件</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="郵件"
+              required="required"
+            />
+          </div>
+          <div class="input-box">
+            <label for="merchant_type">公司名稱</label>
+            <input
+              type="text"
+              id="merchant_type"
+              name="merchant_type"
+              inputmode="numeric"
+              placeholder="公司名稱"
+              required="required"
+            />
+          </div>
+          <div class="input-box">
+            <label for="description">内容</label>
+            <div class="input-box-desc">
+              <textarea
+                id="description"
+                name="description"
+                placeholder="内容"
+                rows="10"
+                required
+              ></textarea>
+            </div>
           </div>
         </div>
+        <button type="submit" id="submit" name="submit" class="submit">
+          提交
+        </button>
       </form>
-      <button class="submit">提交</button>
     </section>
     <!-- Contact Us -->
     <section id="contact-us">
