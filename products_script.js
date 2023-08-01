@@ -137,26 +137,33 @@ window.onload = function() {
   
   function endDrag(e) {
     if (isDragging) {
-      if (e.button !== 0) {
-        return;
-      }
       // Calculate the distance of the button from the left and right edges of the screen
       let distanceFromLeft = goToTopBtn.offsetLeft;
       let distanceFromRight = window.innerWidth - goToTopBtn.offsetLeft - goToTopBtn.offsetWidth;
   
-      // Snap the button to the nearest edge
+      // Snap the button to the nearest edge with a smooth transition
       if (distanceFromLeft < distanceFromRight) {
         // Snap to left edge
         goToTopBtn.style.left = 0;
       } else {
-        // Snap to right edge
-        goToTopBtn.style.left = window.innerWidth - goToTopBtn.offsetWidth + "px";
+        // Snap to right edge with different distance for desktop and mobile
+        if (window.innerWidth >= 768) {
+          // Desktop
+          goToTopBtn.style.left = window.innerWidth - goToTopBtn.offsetWidth - 8 + "px";
+        } else {
+          // Mobile
+          goToTopBtn.style.left = window.innerWidth - goToTopBtn.offsetWidth + "px";
+        }
       }
+    } else {
+      // Disable transition effect when dragging
+      goToTopBtn.style.transition = "none";
     }
   
     // Reset isDragging to false and enable text selection
     isDragging = false;
     document.body.style.userSelect = "auto";
+    goToTopBtn.style.transition = "left 0.3s ease-out"
   }
   
   // Add event listener for scroll event on the window
