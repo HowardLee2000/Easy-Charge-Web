@@ -3,8 +3,8 @@
 /* scroll to top button */
 #scroll-to-top {
     display: none;
-    width: 50px;
-    aspect-ratio: 1/1;
+    width: 55px;
+    aspect-ratio: 1/1.3;
     background-color: aqua;
     border-radius: 10px;
     position: fixed;
@@ -14,6 +14,9 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
+}
+#scroll-to-top:hover {
+    box-shadow: 0 0 15px 0 white;
 }
 
 /* index */
@@ -473,15 +476,15 @@ footer .copyright {
 #dropdown {
     position: fixed;
     top: 0;
-    right: 0;
+    right: -200px;
     z-index: 1;
     margin-left: 40dvw;
     padding: 100px 2em 2em;
     background: rgb(125, 125, 125);
     height: 100dvh;
-    display: none;
     overflow: hidden;
     overflow-y: scroll;
+    transition: right 0.5s ease-in-out;
 }
 #dropdown .icon {
     cursor: pointer;
