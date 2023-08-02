@@ -15,8 +15,10 @@
     align-items: center;
     justify-content: center;
 }
-#scroll-to-top:hover {
-    box-shadow: 0 0 15px 0 white;
+@media (min-width:768px) {
+    #scroll-to-top:hover {
+        box-shadow: 0 0 15px 0 white;
+    }
 }
 
 /* index */
@@ -978,13 +980,6 @@ footer .copyright {
         font-size: clamp(12px,2.9dvw,16px)
     }
 }
-/*
-@media (max-width:500px) {
-    .top-container .specs {
-        width: clamp();
-    }
-}
-*/
 @media (max-width:1000px) {
     #coupon-mart .button-container {
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1153,6 +1148,31 @@ footer .copyright {
 }
 .input-box input {
     font-size: 16px;
+}
+.message {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.message .warning {
+    color: red;
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    animation: buttons .35s linear;
+    display: none;
+}
+@keyframes buttons {
+    0%{
+        transform: scale(0.1);
+    }
+    50%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
