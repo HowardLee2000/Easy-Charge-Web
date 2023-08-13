@@ -110,6 +110,11 @@
         opacity: 0.3;
     }
 }
+@media (max-width:767px) {
+    .slideshow {
+        aspect-ratio: 2/1;
+    }
+}
 
 /* index */
 *{
