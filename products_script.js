@@ -55,10 +55,10 @@ window.onload = function() {
 
   // hide and display button depending on scrolled distance away from top page
   window.addEventListener("scroll", function() {
-    if (window.pageYOffset > 100) {
+    if (window.pageYOffset > 300) {
       goToTopBtn.style.display = "flex";
     } 
-    if (window.pageYOffset === 0) {
+    if (window.pageYOffset < 400) {
       goToTopBtn.style.display = "none";
     }
   });
@@ -101,3 +101,101 @@ window.onload = function() {
     requestAnimationFrame(scrollToTop);
   };
 };
+
+// slideshow animation
+document.addEventListener("DOMContentLoaded", function() {
+  let images = document.querySelectorAll(".slideshow img");
+  let trackers = document.querySelectorAll(".tracker-item");
+
+  // button to manually navigate to different images
+  let prevButton = document.getElementById("prevButton");
+  let nextButton = document.getElementById("nextButton");
+
+  // initialize global variables
+  let globalIndex = 0;
+  let autoplayTimer;
+
+  function showSlide() {
+    let prevIndex = globalIndex - 1;
+    let nextIndex = globalIndex + 1;
+
+    if (prevIndex < 0) prevIndex = images.length - 1;
+    if (nextIndex >= images.length) nextIndex = 0;
+
+    // reset the position and z-index of all images
+    images.forEach(function(image) {
+      image.style.left = "100%";
+      image.style.zIndex = "0";
+    });
+
+    // move the previous image to the left
+    images[prevIndex].style.left = "-100%";
+    images[prevIndex].style.zIndex = "0";
+
+    // display current image in the main screen
+    images[globalIndex].style.left = "0";
+    images[globalIndex].style.zIndex = "1";
+
+    // move the next image to the right
+    images[nextIndex].style.left = "100%";
+    images[nextIndex].style.zIndex = "0";
+
+    updateIndicator();
+  }
+
+  function updateIndicator() {
+    // Update the tracker to mark the current image as active
+    for (let i = 0; i < trackers.length; i++) {
+      if (i === globalIndex) {
+        trackers[i].classList.add("active");
+      } else {
+        trackers[i].classList.remove("active");
+      }
+    }
+  }
+
+  // go to next image when next button is clicked
+  function goPrev() {
+    
+    globalIndex--;
+
+    // Wrap around to the last image if index goes below zero
+    if (globalIndex < 0) globalIndex = images.length - 1;
+
+    // Reset the autoplay timer
+    resetAutoplay();
+    showSlide();
+  }
+
+  // go to next image when next button is clicked
+  function goNext() {
+    globalIndex++;
+
+    // Wrap around to the first image if index exceeds the number of images
+    if (globalIndex === images.length) globalIndex = 0;
+
+    // Reset the autoplay timer
+    resetAutoplay();
+    showSlide();
+  }
+
+  function autoplay() {
+    goNext();
+    resetAutoplay();
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(autoplay, 3000);
+  }
+
+  // Initial display
+  showSlide();
+
+  // Add event listeners to the previous and next buttons
+  prevButton.addEventListener("click", goPrev);
+  nextButton.addEventListener("click", goNext);
+
+  // Autoplay
+  resetAutoplay();
+});
