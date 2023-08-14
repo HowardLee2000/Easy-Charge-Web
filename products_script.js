@@ -115,11 +115,14 @@ document.addEventListener("DOMContentLoaded", function() {
   let globalIndex = 0;
   let autoplayTimer;
   let isTransitioning = false;
-  let firstTransition = true;
-  const animationTime = 3000;
+  const nextTime = 3000; // set desired time for auto next image
+  const animationTime = 1000; // same as the transition time set in css
 
   // arrange images at the right position
   function showSlide() {
+    if (isTransitioning) {
+      return;
+    }
     isTransitioning = true;
     let prevIndex = globalIndex - 1;
     let nextIndex = globalIndex + 1;
@@ -149,9 +152,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     updateIndicator();
-    
+
+    prevBtn.disabled = true;
+    nextBtn.disabled = true;
+
     setTimeout(() => {
       isTransitioning = false;
+      prevBtn.disabled = false;
+      nextBtn.disabled = false;
     }, animationTime);
   }
 
@@ -203,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // reset autoplay timer
   function resetAutoplay() {
     clearInterval(autoplayTimer);
-    autoplayTimer = setInterval(autoplay, animationTime);
+    autoplayTimer = setInterval(autoplay, nextTime);
   }
 
   showSlide();
