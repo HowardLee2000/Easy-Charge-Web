@@ -123,22 +123,25 @@ document.addEventListener("DOMContentLoaded", function() {
     if (nextIndex >= images.length) nextIndex = 0;
 
     // reset the position and z-index of all images
-    images.forEach(function(image) {
+    images.forEach(function(image,index) {
       image.style.left = "100%";
-      image.style.zIndex = "0";
+      if (index === prevIndex) {
+        if (images[prevIndex].style.left === "100%") {
+          images[prevIndex].style.zIndex = "-1";
+          images[prevIndex].style.left = "-100%";
+        }
+      } else if (index === globalIndex) {
+        image.style.zIndex = "1";
+        images[globalIndex].style.left = "0";
+      } else if (index === nextIndex) {
+        if (images[nextIndex].style.left === "-100%") {
+          images[nextIndex].style.zIndex = "-1";
+          images[nextIndex].style.left = "100%";
+        }
+      } else {
+        image.style.zIndex = "-2";
+      }
     });
-
-    // move the previous image to the left
-    images[prevIndex].style.left = "-100%";
-    images[prevIndex].style.zIndex = "0";
-
-    // display current image in the main screen
-    images[globalIndex].style.left = "0";
-    images[globalIndex].style.zIndex = "1";
-
-    // move the next image to the right
-    images[nextIndex].style.left = "100%";
-    images[nextIndex].style.zIndex = "0";
 
     updateIndicator();
   }
