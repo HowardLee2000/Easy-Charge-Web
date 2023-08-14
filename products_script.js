@@ -116,7 +116,8 @@ document.addEventListener("DOMContentLoaded", function() {
   let autoplayTimer;
   let isTransitioning = false;
   const animationTime = 3000;
-  
+
+  // arrange images at the right position
   function showSlide() {
     isTransitioning = true;
     let prevIndex = globalIndex - 1;
@@ -153,8 +154,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }, animationTime);
   }
 
+  // Update the tracker to mark the current image as active
   function updateIndicator() {
-    // Update the tracker to mark the current image as active
     for (let i = 0; i < trackers.length; i++) {
       if (i === globalIndex) {
         trackers[i].classList.add("active");
@@ -164,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  // go to next image when next button is clicked
+  // go to previous image when next button is clicked
   function goPrev() {
     if(isTransitioning) return;
     globalIndex--;
@@ -189,7 +190,8 @@ document.addEventListener("DOMContentLoaded", function() {
     resetAutoplay();
     showSlide();
   }
-
+  
+  // autoplay slideshow
   function autoplay() {
     if(isTransitioning) return;
     goNext();
@@ -197,18 +199,32 @@ document.addEventListener("DOMContentLoaded", function() {
     isTransitioning = false;
   }
 
+  // reset autoplay timer
   function resetAutoplay() {
     clearInterval(autoplayTimer);
     autoplayTimer = setInterval(autoplay, animationTime);
   }
 
-  // Initial display
   showSlide();
-
-  // Add event listeners to the previous and next buttons
   prevBtn.addEventListener("click", goPrev);
   nextBtn.addEventListener("click", goNext);
-
-  // Autoplay
   resetAutoplay();
+
+  document.addEventListener("keyup", keyNavigation);
+
+  function keyNavigation(e) {
+
+    if(e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+    }
+
+    if(e.key === "ArrowLeft") {
+      goPrev();
+    }
+
+    if(e.key === "ArrowRight") {  
+      goNext();
+    }
+
+  }
 });
