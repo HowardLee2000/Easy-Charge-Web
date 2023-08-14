@@ -206,25 +206,22 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   showSlide();
+
+  // click and keyboard arrow key to navigate through images
   prevBtn.addEventListener("click", goPrev);
   nextBtn.addEventListener("click", goNext);
-  resetAutoplay();
-
   document.addEventListener("keyup", keyNavigation);
 
   function keyNavigation(e) {
-
     if(e.key === "ArrowLeft" || e.key === "ArrowRight") {
       e.preventDefault();
     }
-
     if(e.key === "ArrowLeft") {
       goPrev();
     }
-
     if(e.key === "ArrowRight") {  
       goNext();
     }
-
   }
+  resetAutoplay();
 });
