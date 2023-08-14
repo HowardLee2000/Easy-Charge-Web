@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let globalIndex = 0;
   let autoplayTimer;
   let isTransitioning = false;
+  let firstTransition = true;
   const animationTime = 3000;
 
   // arrange images at the right position
@@ -148,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     updateIndicator();
-
+    
     setTimeout(() => {
       isTransitioning = false;
     }, animationTime);
