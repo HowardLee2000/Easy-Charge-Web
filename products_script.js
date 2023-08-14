@@ -108,14 +108,17 @@ document.addEventListener("DOMContentLoaded", function() {
   let trackers = document.querySelectorAll(".tracker-item");
 
   // button to manually navigate to different images
-  let prevButton = document.getElementById("prevButton");
-  let nextButton = document.getElementById("nextButton");
+  let prevBtn = document.getElementById("prevButton");
+  let nextBtn = document.getElementById("nextButton");
 
   // initialize global variables
   let globalIndex = 0;
   let autoplayTimer;
-
+  let isTransitioning = false;
+  const animationTime = 3000;
+  
   function showSlide() {
+    isTransitioning = true;
     let prevIndex = globalIndex - 1;
     let nextIndex = globalIndex + 1;
 
@@ -144,6 +147,10 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     updateIndicator();
+
+    setTimeout(() => {
+      isTransitioning = false;
+    }, animationTime);
   }
 
   function updateIndicator() {
@@ -159,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // go to next image when next button is clicked
   function goPrev() {
-    
+    if(isTransitioning) return;
     globalIndex--;
 
     // Wrap around to the last image if index goes below zero
@@ -172,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // go to next image when next button is clicked
   function goNext() {
+    if(isTransitioning) return;
     globalIndex++;
 
     // Wrap around to the first image if index exceeds the number of images
@@ -183,21 +191,23 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function autoplay() {
+    if(isTransitioning) return;
     goNext();
     resetAutoplay();
+    isTransitioning = false;
   }
 
   function resetAutoplay() {
     clearInterval(autoplayTimer);
-    autoplayTimer = setInterval(autoplay, 3000);
+    autoplayTimer = setInterval(autoplay, animationTime);
   }
 
   // Initial display
   showSlide();
 
   // Add event listeners to the previous and next buttons
-  prevButton.addEventListener("click", goPrev);
-  nextButton.addEventListener("click", goNext);
+  prevBtn.addEventListener("click", goPrev);
+  nextBtn.addEventListener("click", goNext);
 
   // Autoplay
   resetAutoplay();
