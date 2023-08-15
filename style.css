@@ -1020,6 +1020,8 @@ footer .copyright {
         border-bottom: 3px solid white;
         border-top-right-radius: 20px;
         border-bottom-right-radius: 20px;
+        background-color: aqua;
+        color: black;
     }
     .top-container .specs {
         padding: 1em 2em;
