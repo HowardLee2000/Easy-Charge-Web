@@ -144,7 +144,6 @@ body::-webkit-scrollbar-thumb:hover, #coupon-mart .merchants::-webkit-scrollbar-
 }
 html {
     color-scheme: light dark;
-    scroll-behavior: smooth;
 }
 body {
     color: white;

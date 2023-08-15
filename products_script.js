@@ -34,21 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// smooth transition to different sections
-let navLinks = document.querySelectorAll('.small-nav');
+window.onload = function() {
 
-navLinks.forEach((link) => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    let targetId = link.getAttribute('href');
-    let targetSection = document.querySelector(targetId);
-    targetSection.scrollIntoView({
-      behavior: 'smooth'
+  // smooth transition to different sections
+  const navLinks = document.querySelectorAll('.small-nav');
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.href.split('/').pop().split('#')[1];
+      document.getElementById(targetId).scrollIntoView({
+        behavior: 'smooth'
+      });
     });
   });
-});
-
-window.onload = function() {
 
   // Mobile Menu Animation
   const menuBtn = document.getElementById("menu-button");
