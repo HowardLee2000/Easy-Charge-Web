@@ -34,6 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// smooth transition to different sections
+let navLinks = document.querySelectorAll('.small-nav');
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    let targetId = link.getAttribute('href');
+    let targetSection = document.querySelector(targetId);
+    targetSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
 window.onload = function() {
 
   // Mobile Menu Animation
@@ -101,31 +115,6 @@ window.onload = function() {
     requestAnimationFrame(scrollToTop);
   };
 };
-
-let smallNavs = document.getElementById("small-menu-nav");
-let bigNavs = document.getElementById("menu-nav");
-
-smallNavs.forEach(function(link) {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    let targetId = link.getAttribute('href');
-    let targetSection = document.querySelector(targetId);
-    targetSection.scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-bigNavs.forEach(function(link) {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    let targetId = link.getAttribute('href');
-    let targetSection = document.querySelector(targetId);
-    targetSection.scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
 
 // slideshow animation
 document.addEventListener("DOMContentLoaded", function() {
